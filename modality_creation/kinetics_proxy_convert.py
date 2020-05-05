@@ -63,16 +63,16 @@ def get_model_and_data_loader(modality):
 
         print('Loading instance segmentation model')
 
-    # elif modality == 'flow':
-    #     print('Loading flow model')
-    #
-    #     model = FlowNet2(args).eval()
-    #     # model = FlowNet2CSS(args).eval()
-    #     # checkpoint = torch.load('/home/m3kowal/Research/vfhlt/PyTorchConv3D/data/KINETICS/modality_pred/flow/FlowNet2-CSS-ft-sd_checkpoint.pth')
-    #     checkpoint = torch.load('/home/m3kowal/Research/vfhlt/PyTorchConv3D/data/KINETICS/modality_pred/flow/FlowNet2_checkpoint.pth')
-    #     # print(checkpoint['state_dict'])
-    #     model.load_state_dict(checkpoint['state_dict'])
-    #     preprocess = transforms.ToTensor()
+    elif modality == 'flow':
+        print('Loading flow model')
+    
+        model = FlowNet2(args).eval()
+        # model = FlowNet2CSS(args).eval()
+        # checkpoint = torch.load('/home/m3kowal/Research/vfhlt/PyTorchConv3D/data/KINETICS/modality_pred/flow/FlowNet2-CSS-ft-sd_checkpoint.pth')
+        checkpoint = torch.load('/home/m3kowal/Research/vfhlt/PyTorchConv3D/data/KINETICS/modality_pred/flow/FlowNet2_checkpoint.pth')
+        # print(checkpoint['state_dict'])
+        model.load_state_dict(checkpoint['state_dict'])
+        preprocess = transforms.ToTensor()
 
     # move to GPU and evaluation mode
     model.eval().cuda(device)
