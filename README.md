@@ -1,3 +1,5 @@
+## (WORK IN PROGRESS)
+
 # Multi-Modal Action Recognition 
 
 This repository contains PyTorch code for the analysis of different modalities for the Kinetics dataset
