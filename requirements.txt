@@ -1,0 +1,5 @@
+six
+numpy
+scipy
+torch >= 1.0.0
+matplotlib
